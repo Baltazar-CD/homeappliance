@@ -1,0 +1,384 @@
+
+/*Universal Grid Element Behavoir*/
+/*-------------------------------------------*/
+.Grid {
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+}
+
+.Grid-cell {
+  /*Positioning*/
+  position: relative;
+  
+  /*Display and Box Model*/
+  flex: 1;
+  -moz-box-sizing: border-box; 
+  -webkit-box-sizing: border-box; 
+  box-sizing: border-box; 
+}
+/*-------------------------------------------*/
+
+
+/*Individual Cell Behavoir for Screen Sizes*/
+/*===========================================*/
+
+/*Mobile First Individual Cell Sizing*/
+/*-------------------------------------------*/
+.Grid--cols-1 > .Grid-cell {
+  flex: 0 0 100%;
+}
+
+.Grid--cols-2 > .Grid-cell {
+  flex: 0 0 100%;
+}
+  
+.Grid--cols-3 > .Grid-cell {
+  flex: 0 0 100%;
+}
+  
+.Grid--cols-4 > .Grid-cell {
+  flex: 0 0 100%;
+} 
+  
+.Grid--cols-flex3 > .Grid-cell {
+  flex: 0 0 100%;
+}
+
+.Grid--cols-flex4 > .Grid-cell {
+  flex: 0 0 100%;
+}
+
+.Grid--cols-flex5 > .Grid-cell {
+  flex: 0 0 100%;
+}
+
+.Grid--cols-inline > .Grid-cell {
+  flex: 0 0 100%;
+}
+
+.alignHorizontal > .Grid-cell {
+  display: flex;
+  justify-content: center;
+}
+
+.alignVertical > .Grid-cell {
+  display: flex;
+  align-items: center;
+}
+/*-------------------------------------------*/
+
+/*800px or More Screens Default Desktop Behavoir*/
+/*-------------------------------------------*/
+@media (min-width: 800px) {
+  .Grid--cols-1 > .Grid-cell {
+    flex: 0 0 100%;
+  }
+  .Grid--cols-2 > .Grid-cell {
+    flex: 0 0 50%;
+  }
+  .Grid--cols-3 > .Grid-cell {
+    flex: 0 0 33.33%;
+  }
+  .Grid--cols-4 > .Grid-cell {
+    flex: 0 0 25%;
+  }
+  .Grid--cols-5 > .Grid-cell {
+    flex: 0 0 20%;
+  } 
+  .Grid--cols-6 > .Grid-cell {
+    flex: 0 0 16.66%;
+  } 
+  .Grid--cols-flex3 > .Grid-cell {
+    flex: 0 0 50%;
+  }
+  .Grid--cols-flex4 > .Grid-cell {
+    flex: 0 0 50%;
+  }
+  .Grid--cols-flex5 > .Grid-cell {
+    flex: 0 0 50%;
+  }
+  /*Gutters*/
+  .Grid--gutters {
+    margin-left: -4em;
+  }
+  .Grid--gutters .Grid-cell {
+    padding-left: 4em;
+  }
+}
+/*-------------------------------------------*/
+
+/*1000px or More Screens 2 per Row*/
+/*-------------------------------------------*/
+@media (min-width: 1000px) {
+  .Grid--cols-flex3 > .Grid-cell {
+    flex: 0 0 50%;
+  }
+  .Grid--cols-flex4 > .Grid-cell {
+    flex: 0 0 50%;
+  }
+  .Grid--cols-flex5 > .Grid-cell {
+    flex: 0 0 50%;
+  }
+}
+/*-------------------------------------------*/
+
+/*1200px or More Screens, Flex 3 per Row*/
+/*-------------------------------------------*/
+@media (min-width: 1200px) {
+  .Grid--cols-flex3 > .Grid-cell {
+    flex: 0 0 33.33%;
+  }
+  .Grid--cols-flex4 > .Grid-cell {
+    flex: 0 0 33.3%;
+  }
+  .Grid--cols-flex5 > .Grid-cell {
+    flex: 0 0 33.3%;
+  }
+  /*Gutters*/
+  .Grid--gutters {
+    margin-left: -8em;
+  }
+  .Grid--gutters .Grid-cell {
+    padding-left: 8em;
+  }
+}
+/*-------------------------------------------*/
+
+/*1400px or More Screens, Flex 4 per Row*/
+/*-------------------------------------------*/
+@media (min-width: 1400px) {
+  .Grid--cols-flex4 > .Grid-cell {
+    flex: 0 0 25%;
+  }
+  .Grid--cols-flex5 > .Grid-cell {
+    flex: 0 0 25%;
+  }
+}
+/*-------------------------------------------*/
+
+/*1600px or More Screens, Flex 5 per Row*/
+/*-------------------------------------------*/
+@media (min-width: 1600px) {
+  .Grid--cols-flex5 > .Grid-cell {
+    flex: 0 0 20%;
+  }
+  /*Gutters*/
+  .Grid--gutters {
+    margin-left: -12em;
+  }
+  .Grid--gutters .Grid-cell {
+    padding-left: 12em;
+  }
+}
+/*-------------------------------------------*/
+
+/*===========================================*/
+
+
+/*********************************************/
+
+
+.featured {
+  width: 850px;
+  margin: 0 auto;
+}
+
+@media(max-width: 800px) {
+  .featured {
+    width: 300px;
+  }
+}
+
+.featured-title {
+  width: 100%;
+  text-align: center;
+}
+
+.featured-title h1 {
+  font-family: "Montserrat";
+  font-size: 40px;
+  text-transform: uppercase;
+  letter-spacing: 7px;
+}
+
+.welcome-line {
+  position: absolute;
+  height: 2px;
+  background-color: #c29958;
+  z-index: -10;
+}
+
+.line-d {
+  width: 500px;
+  -webkit-transform: translate(150px, 0px) rotate(20deg);
+  transform: translate(150px, 0px) rotate(20deg);
+}
+
+.line-e {
+  width: 700px;
+  -webkit-transform: translate(70px, -30px) rotate(-5deg);
+  transform: translate(70px, -30px) rotate(-5deg);
+}
+
+
+.featured-product {
+  margin-top: 50px;
+  cursor: pointer;
+  opacity: 0;
+  -webkit-transform: translate(0, 100px);
+  transform: translate(0, 100px);
+  -webkit-transition: all .75s ease;
+  transition: all .75s ease;
+}
+
+.featured-product.reveal {
+  opacity: 1;
+  -webkit-transform: translate(0, 0);
+  transform: translate(0, 0);
+}
+
+.featured-b {
+  margin-top: 130px;
+}
+
+.parallax-image {
+  max-width: 100%;
+  height: 400px;
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+  transform-style: preserve-3d;
+  box-shadow: 0px 0px 60px 20px rgba(0,0,0,0.1);
+}
+
+.image-border {
+  position: absolute;
+  top: 50px;
+
+  left: 50px;
+  /* Firefox */
+  height: -moz-calc(100% - 100px);
+  /* WebKit */
+  height: -webkit-calc(100% - 100px);
+  /* Opera */
+  height: -o-calc(100% - 100px);
+  /* Standard */
+  height: calc(100% - 100px);
+
+  width: -moz-calc(100% - 100px);
+  /* WebKit */
+  width: -webkit-calc(100% - 100px);
+  /* Opera */
+  width: -o-calc(100% - 100px);
+  /* Standard */
+  width: calc(100% - 100px);
+ 
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  o-box-sizing: border-box;
+  box-sizing: border-box;
+  
+  border: 2px solid #c29958;
+  transform: translateZ(20px);
+}
+
+.product-desc {
+  padding-top: 10px;
+  width: 300px;
+  text-align: center;
+}
+
+.product-desc h1 {
+  font-family: "Montserrat";
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 7px;
+}
+
+
+
+
+
+
+
+.phone-call {
+    width: 50px;
+    height: 50px;
+    left: 20px;
+    bottom: 20px;
+    background: #10b418;
+    position: fixed;
+    text-align: center;
+    color: #ffffff;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 99;
+  display: inline-block;
+  line-height: 65px;
+}
+
+.phone-call:before {
+    position: absolute;
+    content: " ";
+    z-index: -1;
+    top: -15px;
+    left: -15px;
+    background-color: #10b418;
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+    animation-fill-mode: both;
+    -webkit-animation-fill-mode: both;
+    opacity: 0.6;
+    -webkit-animation: pulse 1s ease-out;
+    animation: pulse 1.8s ease-out;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes pulse {
+    0% {
+        -webkit-transform: scale(0);
+        opacity: 0;
+    }
+    25% {
+        -webkit-transform: scale(0.3);
+        opacity: 1;
+    }
+    50% {
+        -webkit-transform: scale(0.6);
+        opacity: .6;
+    }
+    75% {
+        -webkit-transform: scale(0.9);
+        opacity: .3;
+    }
+    100% {
+        -webkit-transform: scale(1);
+        opacity: 0;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    25% {
+        transform: scale(0.3);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(0.6);
+        opacity: .6;
+    }
+    75% {
+        transform: scale(0.9);
+        opacity: .3;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0;
+    }
+}
